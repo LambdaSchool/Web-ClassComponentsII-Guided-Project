@@ -66,7 +66,7 @@ export default class Container extends React.Component {
     return (
       <div className='container'>
         <div className='sub-container'>
-          <h3>These are my friends:</h3>
+          <h3>Friends List:</h3>
           {/* Make it so we get the `No friends! Sad!` h5 if there are no friends */}
           {
             this.state.friends.map(friend => (

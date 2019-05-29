@@ -16,7 +16,7 @@ export class FriendEditor extends React.Component {
         {
           this.props.isEditing
             ? <h3>Edit Friend</h3>
-            : <h3>Add a friend!</h3>
+            : <h3>Add a new friend!</h3>
         }
 
         name:
