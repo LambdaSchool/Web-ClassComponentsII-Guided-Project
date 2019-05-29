@@ -14,13 +14,17 @@ export default function Friend({ friend, deleteFriend, markAsEnemy, setCurrentFr
     // implement using markAsEnemy
   };
 
+  const friendStyle = {
+    color: friend.friendly ? 'green' : 'red',
+  };
+
   return (
     <div>
-      <span>{friend.name} is {friend.age}</span>
+      <span style={friendStyle}>{friend.name} is {friend.age}</span>
 
       <button onClick={onEdit} className='small'>Edit</button>
       <button onClick={onDelete} className='small danger'>Delete</button>
-      <button onClick={onMarkEnemy} className='small danger'>Mark as Enemy</button>
+      <button onClick={onMarkEnemy} className='small alert'>Mark as Enemy</button>
     </div>
   );
 }
