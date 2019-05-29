@@ -88,7 +88,7 @@ export default class Container extends React.Component {
           updateFriend={this.updateFriend}
           isEditing={!!this.state.currentFriendId}
         />
-        <button onClick={this.wipeOutEnemies}>Wipe out all enemies</button>
+        <button className='alert' onClick={this.wipeOutEnemies}>Wipe out all enemies</button>
       </div>
     );
   }
