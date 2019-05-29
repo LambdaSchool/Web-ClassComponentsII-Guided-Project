@@ -18,7 +18,7 @@ const initialState = {
   form: initialFormState,
 };
 
-class Container extends React.Component {
+export default class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = initialState;
@@ -92,5 +92,3 @@ class Container extends React.Component {
     );
   }
 }
-
-export default Container;
