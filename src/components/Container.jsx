@@ -80,6 +80,7 @@ export default class Container extends React.Component {
             ))
           }
         </div>
+
         <FriendEditor
           form={this.state.form}
           inputChange={this.inputChange}
