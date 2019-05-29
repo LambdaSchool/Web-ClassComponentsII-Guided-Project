@@ -52,6 +52,16 @@ class Container extends React.Component {
     // implement with setState
   }
 
+  markAsEnemy = id => {
+    // using setState:
+    // add a "friendly" of false to the friend object with the given id
+  }
+
+  wipeOutEnemies = () => {
+    // using setState:
+    // wipe the enemies from the friends array
+  }
+
   render() {
     return (
       <div className='container'>
@@ -64,6 +74,7 @@ class Container extends React.Component {
                 key={friend.id}
                 friend={friend}
                 deleteFriend={this.deleteFriend}
+                markAsEnemy={this.markAsEnemy}
                 setCurrentFriendId={this.setCurrentFriendId}
               />
             ))
@@ -76,6 +87,7 @@ class Container extends React.Component {
           updateFriend={this.updateFriend}
           isEditing={!!this.state.currentFriendId}
         />
+        <button onClick={this.wipeOutEnemies}>Wipe out all enemies</button>
       </div>
     );
   }
