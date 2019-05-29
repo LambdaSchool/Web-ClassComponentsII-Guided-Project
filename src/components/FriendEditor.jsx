@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export class FriendEditor extends React.Component {
+export default class FriendEditor extends React.Component {
   onNameChange = event => {
     // you'll need this.props.inputChange
   }
@@ -42,5 +42,3 @@ export class FriendEditor extends React.Component {
     );
   }
 }
-
-export default FriendEditor;
