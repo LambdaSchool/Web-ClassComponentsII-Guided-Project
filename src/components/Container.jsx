@@ -44,8 +44,11 @@ export default class Container extends React.Component {
     // 3- reset the form to its initial state
   }
 
-  setCurrentFriendId = id => {
-    // set state.currentFriendId to be `id`
+  setFriendToBeEdited = id => {
+    // find the friend using the passed `id`
+    // using setState:
+    // 1- set state.currentFriendId to be `id`
+    // 2- populate this.state.form with the name and age of the friend
   }
 
   inputChange = (value, field) => {
@@ -75,7 +78,7 @@ export default class Container extends React.Component {
                 friend={friend}
                 deleteFriend={this.deleteFriend}
                 markAsEnemy={this.markAsEnemy}
-                setCurrentFriendId={this.setCurrentFriendId}
+                setFriendToBeEdited={this.setFriendToBeEdited}
               />
             ))
           }

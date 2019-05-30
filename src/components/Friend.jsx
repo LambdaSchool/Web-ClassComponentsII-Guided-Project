@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-export default function Friend({ friend, deleteFriend, markAsEnemy, setCurrentFriendId }) {
+export default function Friend({ friend, deleteFriend, markAsEnemy, setFriendToBeEdited }) {
   const onEdit = event => {
-    // One liner. Implement using setCurrentFriendId
+    // One liner. Implement using setFriendToBeEdited
   };
 
   const onDelete = event => {
