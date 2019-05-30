@@ -25,9 +25,17 @@ export default class Container extends React.Component {
   }
 
   addFriend = () => {
-    // using setState:
-    // 1- add a new friend object to state.friends
-    // 2- reset the form to its initial state
+    const newFriend = {
+      id: uuid(),
+      name: this.state.form.nameValue,
+      age: this.state.form.ageValue,
+      friendly: true,
+    };
+
+    this.setState({
+      friends: this.state.friends.concat(newFriend),
+      form: initialFormState,
+    });
   }
 
   updateFriend = () => {
