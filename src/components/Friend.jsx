@@ -4,17 +4,14 @@ import React from 'react';
 export default function Friend({ friend, deleteFriend, markAsEnemy, setFriendToBeEdited }) {
   const onEdit = event => {
     // One liner. Implement using setFriendToBeEdited
-    setFriendToBeEdited(friend.id);
   };
 
   const onDelete = event => {
     // One liner. Implement using deleteFriend
-    deleteFriend(friend.id);
   };
 
   const onMarkEnemy = event => {
     // One liner. Implement using markAsEnemy
-    markAsEnemy(friend.id);
   };
 
   const friendStyle = {
