@@ -100,6 +100,14 @@ export default class Container extends React.Component {
   markAsEnemy = id => {
     // using setState:
     // add a "friendly" of false to the friend object with the given id
+    this.setState(currentState => ({
+      friends: currentState.friends.map(friend => {
+        if (friend.id === id) {
+          friend.friendly = false;
+        }
+        return friend;
+      }),
+    }));
   }
 
   wipeOutEnemies = () => {
