@@ -62,6 +62,11 @@ export default class Container extends React.Component {
     // 1- delete an existing friend (the `id` tells us which)
     // 2- also set currentFriendId to null
     // 3- reset the form to its initial state
+    this.setState(st => ({
+      friends: st.friends.filter(fr => fr.id !== id),
+      form: initialFormState,
+      currentFriendId: null,
+    }));
   }
 
   setFriendToBeEdited = id => {
