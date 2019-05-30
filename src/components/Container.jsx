@@ -74,6 +74,15 @@ export default class Container extends React.Component {
     // using setState:
     // 1- set state.currentFriendId to be `id`
     // 2- populate this.state.form with the name and age of the friend
+    const friendToEdit = this.state.friends.find(friend => friend.id === id);
+
+    this.setState({
+      currentFriendId: id,
+      form: {
+        nameValue: friendToEdit.name,
+        ageValue: friendToEdit.age,
+      },
+    });
   }
 
   inputChange = (value, field) => {
