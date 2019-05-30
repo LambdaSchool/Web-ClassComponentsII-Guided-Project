@@ -43,17 +43,17 @@ export default class Container extends React.Component {
     // 1- update an existing friend (the `state.currentFriendId` tells us which)
     // 2- reset currentFriendId to null
     // 3- reset the form to its initial state
-    this.setState({
-      friends: this.state.friends.map(friend => {
-        if (friend.id === this.state.currentFriendId) {
-          friend.name = this.state.form.nameValue;
-          friend.age = this.state.form.ageValue;
+    this.setState(state => ({
+      friends: state.friends.map(friend => {
+        if (friend.id === state.currentFriendId) {
+          friend.name = state.form.nameValue;
+          friend.age = state.form.ageValue;
         }
         return friend;
       }),
       form: initialFormState,
       currentFriendId: null,
-    });
+    }));
   }
 
   deleteFriend = id => {
