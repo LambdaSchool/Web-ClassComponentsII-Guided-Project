@@ -3,15 +3,18 @@ import React from 'react';
 
 export default function Friend({ friend, deleteFriend, markAsEnemy, setCurrentFriendId }) {
   const onEdit = event => {
-    // implement using setCurrentFriendId
+    // One liner. Implement using setCurrentFriendId
+    setCurrentFriendId(friend.id);
   };
 
   const onDelete = event => {
-    // implement using deleteFriend
+    // One liner. Implement using deleteFriend
+    deleteFriend(friend.id);
   };
 
   const onMarkEnemy = event => {
-    // implement using markAsEnemy
+    // One liner. Implement using markAsEnemy
+    markAsEnemy(friend.id);
   };
 
   const friendStyle = {

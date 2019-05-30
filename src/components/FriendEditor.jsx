@@ -3,17 +3,29 @@ import React from 'react';
 
 export default function FriendEditor({
   form,
-  onFriendAdd,
-  onFriendUpdate,
+  addFriend,
+  updateFriend,
   isEditing,
   inputChange,
 }) {
   const onNameChange = event => {
-    // you'll need inputChange
+    // One liner. You'll need inputChange
+    inputChange(event.target.value, 'nameValue');
   };
 
   const onAgeChange = event => {
-    // you'll need inputChange
+    // One liner. You'll need inputChange
+    inputChange(event.target.value, 'ageValue');
+  };
+
+  const onFriendAdd = event => {
+    // One liner. You'll need addFriend
+    addFriend(form.nameValue, form.ageValue);
+  };
+
+  const onFriendUpdate = event => {
+    // One liner. You'll need updateFriend
+    updateFriend(form.nameValue, form.ageValue);
   };
 
   return (

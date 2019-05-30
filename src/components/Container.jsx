@@ -28,13 +28,36 @@ export default class Container extends React.Component {
     // using setState:
     // 1- add a new friend object to state.friends
     // 2- reset the form to its initial state
+    const newFriend = {
+      id: uuid(),
+      name,
+      age,
+      friendly: true,
+    };
+    this.setState({
+      friends: this.state.friends.concat(newFriend),
+      form: initialFormState,
+    });
   }
 
-  updateFriend = (id, name, age) => {
+  updateFriend = (name, age) => {
     // using setState:
-    // 1- update an existing friend (the `id` tells us which friend to update)
-    // 2- also reset currentFriendId to null
+    // 1- update an existing friend (the `state.currentFriendId` tells us which)
+    // 2- reset currentFriendId to null
     // 3- reset the form to its initial state
+    const friends = this.state.friends.map(fr => {
+      if (fr.id === this.state.currentFriendId) {
+        fr.name = name;
+        fr.age = age;
+      }
+      return fr;
+    });
+
+    this.setState({
+      friends,
+      form: initialFormState,
+      currentFriendId: null,
+    });
   }
 
   deleteFriend = id => {
@@ -42,24 +65,59 @@ export default class Container extends React.Component {
     // 1- delete an existing friend (the `id` tells us which)
     // 2- also set currentFriendId to null
     // 3- reset the form to its initial state
+    const friends = this.state.friends.filter(fr => {
+      return fr.id !== id;
+    });
+
+    this.setState({
+      friends,
+      currentFriendId: null,
+      form: initialFormState,
+    });
   }
 
   setCurrentFriendId = id => {
     // set state.currentFriendId to be `id`
+    const friendToEdit = this.state.friends.find(fr => fr.id === id);
+
+    this.setState({
+      currentFriendId: id,
+      form: {
+        nameValue: friendToEdit.name,
+        ageValue: friendToEdit.age,
+      },
+    });
   }
 
   inputChange = (value, field) => {
     // implement with setState
+    this.setState({
+      form: {
+        ...this.state.form,
+        [field]: value,
+      },
+    });
   }
 
   markAsEnemy = id => {
     // using setState:
     // add a "friendly" of false to the friend object with the given id
+    const friends = this.state.friends.map(fr => {
+      if (fr.id === id) {
+        fr.friendly = false;
+      }
+      return fr;
+    });
+
+    this.setState({ friends });
   }
 
   wipeOutEnemies = () => {
     // using setState:
     // wipe the enemies from the friends array
+    this.setState({
+      friends: this.state.friends.filter(fr => fr.friendly),
+    });
   }
 
   render() {
