@@ -20,9 +20,11 @@ export default function FriendEditor({
 
   const onFriendAdd = event => {
     // One liner. You'll need addFriend
+    addFriend();
   };
 
   const onFriendUpdate = event => {
+    updateFriend();
     // One liner. You'll need updateFriend
   };
 
