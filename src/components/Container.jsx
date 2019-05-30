@@ -89,6 +89,12 @@ export default class Container extends React.Component {
 
   inputChange = (value, field) => {
     // implement with setState
+    this.setState(state => ({
+      form: {
+        ...state.form,
+        [field]: value,
+      },
+    }));
   }
 
   markAsEnemy = id => {
