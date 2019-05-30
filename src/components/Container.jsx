@@ -25,16 +25,17 @@ export default class Container extends React.Component {
   }
 
   addFriend = () => {
-    const newFriend = {
-      id: uuid(),
-      name: this.state.form.nameValue,
-      age: this.state.form.ageValue,
-      friendly: true,
-    };
-
-    this.setState({
-      friends: this.state.friends.concat(newFriend),
-      form: initialFormState,
+    this.setState(state => {
+      const newFriend = {
+        id: uuid(),
+        name: this.state.form.nameValue,
+        age: this.state.form.ageValue,
+        friendly: true,
+      };
+      return {
+        friends: state.friends.concat(newFriend),
+        form: initialFormState,
+      };
     });
   }
 
