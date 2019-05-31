@@ -117,6 +117,8 @@ export default class Container extends React.Component {
     // wipe the enemies from the friends array
     this.setState(currentState => ({
       friends: currentState.friends.filter(friend => friend.friendly),
+      currentFriendId: null,
+      form: initialFormState,
     }));
   }
 
