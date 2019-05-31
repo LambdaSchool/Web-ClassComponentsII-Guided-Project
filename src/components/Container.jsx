@@ -25,6 +25,9 @@ export default class Container extends React.Component {
   }
 
   addFriend = () => {
+    // using setState:
+    // 1- add a new friend object to state.friends
+    // 2- reset the form to its initial state
     this.setState(state => {
       if (state.form.nameValue.trim() && state.form.ageValue.trim()) {
         const newFriend = {
